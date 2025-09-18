@@ -1,0 +1,17 @@
+body { font-family: Arial, sans-serif; padding: 20px; }
+h1 { color: #333; }
+.container { max-width: 800px; margin: auto; }
+.option-radio{
+    margin-bottom: 10px;
+    padding: 8px;
+}
+textarea, #question, #answer, .option {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+}
+button { margin-top: 10px; padding: 10px; cursor: pointer; }
+.output { background: #f9f9f9; padding: 15px; border: 1px solid #ccc; margin-top: 20px; }
+.tab { margin-bottom: 15px; }
+.hidden { display: none; }
+.question { margin-bottom: 20px; }

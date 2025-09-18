@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Questões</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Cadastro de Questões</h1>
+  <a href="index.html"><button>⬅️ Voltar para o Quiz</button></a>
+  <hr>
+
+  <!-- Abas -->
+  <div class="tab">
+    <button onclick="showForm()">Modo Formulário</button>
+    <button onclick="showJSON()">Modo JSON</button>
+  </div>
+
+  <!-- Modo Formulário -->
+  <form id="questionForm">
+    <label>Pergunta:</label>
+    <textarea id="question" rows="3" required></textarea>
+
+    <label>Alternativas:</label>
+    <input type="text" class="option" placeholder="Opção A" required>
+    <input type="text" class="option" placeholder="Opção B" required>
+    <input type="text" class="option" placeholder="Opção C" required>
+    <input type="text" class="option" placeholder="Opção D" required>
+    <input type="text" class="option" placeholder="Opção E" required>
+
+    <label>Resposta Correta (0 = A, 1 = B, 2 = C, 3 = D, 4 = E):</label>
+    <input type="number" id="answer" min="0" max="4" required>
+
+    <button type="submit">Adicionar Questão</button>
+  </form>
+
+  <!-- Modo JSON -->
+  <div id="jsonForm" class="hidden">
+    <label>Cole a questão no formato JSON:</label>
+    <textarea id="jsonInput" rows="10" placeholder='{
+      "question": "Exemplo...",
+      "options": ["A) ...", "B) ...", "C) ...", "D) ...", "E) ..."],
+      "answer": 1
+      }'></textarea>
+    <button onclick="addFromJSON()">Adicionar Questão (JSON)</button>
+  </div>
+
+  <!-- Saída -->
+  <div class="output">
+    <strong>Questões no formato JSON:</strong>
+    <pre id="formattedQuestion"></pre>
+  </div>
+
+</div>
+
+  <!-- Scripts -->
+  <script src="js/questions.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
